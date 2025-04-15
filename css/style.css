@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 home {
   height: 100%;
@@ -49,8 +54,33 @@ body {
 }
 
 .username {
+  font-family: 'Fira Code', monospace;
   font-size: 27px;
   font-weight: bold;
+}
+/* typewritter*/
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.35rem solid orange; /* Cursor */
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  font-family: 'Fira Code', monospace;
+  font-size: 2em;
+  width: 20ch; /* Adjust to match the length of your text */
+  animation: typing 3.5s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
+  margin: 0 auto; /* Centers the element horizontally */
+  text-align: center; /* Ensures text is centered within the element */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 15ch } /* Match this to the .typewriter width */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
 
 .designation {}
@@ -154,20 +184,20 @@ body */
 /* navbar
  */
 
-.navbar {
-  width: 5%;
-  height: 50vh;
-  box-sizing: border-box;
-  margin-left: 2%;
-  background-color: white;
-  align-items: center;
-  border-radius: 5rem;
-  position: relative;
-  min-width: 70px;
-  display: flex;
-  justify-content: center;
-  top: 5.5rem;
+ .navbar {
+  
+  background-color: #f8f8f8;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #ddd;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 70px;
+  height: auto;background-color: #ffffff57;
+  border-radius: 40px 0 0 40px;
 }
+
 
 .navbar img {
   height: 46px;
@@ -209,67 +239,68 @@ body */
   
 }
 
-@media only screen and (max-width: 400px) {
+
+
+@media only screen and (max-width: 500px) {
   body {
-    
-    padding: 100px;
-    align-content: center;
     display: block;
-  }
-  
-  .leftprofile{
-    background-color: #372b2f;
-    width: 100%;
-    border-radius: 30px;
-    position: relative;
-    margin-top: 45px;
-    height: 24rem;
-  }
-  .main-body{
-
-    box-shadow: -1px 0px 11px rgb(239, 94, 110);
-    width: 100%;
-    background-color: white;
-    color: black;
-    border-radius: 32px 32px 32px 32px;
-    overflow: auto;
-    box-sizing: border-box;
-    height: fit-content;
     margin: 0;
-    margin-top: 0px;
-    margin-top: 42px;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
   }
-.cv-download{
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-.navbar{
-  width: 100%;
-  height: 3.5rem;
-  
-  background-color: white;
-  position: sticky;
-  bottom: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navbar ul{
-  flex-direction: row;
-  display: flex; /* Flex layout */
-  justify-content: center; /* Center items horizontally */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  list-style: none; /* Remove list styling */
-}
-.navbar ul> li{
-  margin: 0 1.5rem 0 1.5rem;
-}
-.navbar img{
-  height: 100%; /* Ensure images fill the link */
-  width: 100%; /* Ensure images fill the link */
-  object-fit: contain; /* Maintain aspect ratio */
-}
 
+  .leftprofile {
+    width: 100%;
+    height: auto;
+    border-radius: 1%;
+    position: relative;
+
+  }
+
+  .main-body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 30px;
+    border-radius: 1%;
+  }
+
+  .navbar {
+    position: fixed !important; /* override desktop style */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #64424e;;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 9999;
+    border-top: 1px solid #ccc;
+    border-radius: 0;
+    transform: none !important; /* prevent center alignment */
+    top: auto !important;
+    right: auto !important;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navbar ul li {
+    margin: 0;
+  }
+
+  .navbar img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
 }
