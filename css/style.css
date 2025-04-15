@@ -75,7 +75,7 @@ body {
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 15ch } /* Match this to the .typewriter width */
+  to { width: 16ch } /* Match this to the .typewriter width */
 }
 
 @keyframes blink-caret {
