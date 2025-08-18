@@ -767,7 +767,7 @@ list-style: none;
 }
 
 .lc-img {
-  width: 59%;
+  width:80%;
   height: auto;
   display: block;
 }
@@ -964,3 +964,100 @@ list-style: none;
   font-size: 14px;
 }
 .contact-form input:focus { outline: 3px solid #ffb84d; outline-offset: 2px; }
+/* leetocdoe badges */
+.lc-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  background: #f7f7f7;
+  border: 1px solid #ececec;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #2b2b2b;
+}
+
+.lc-badge img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+/* badges leetcode */
+/* Two-column DSA layout */
+.dsa-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px; /* left grows, right fixed width */
+  gap: 18px 22px;
+  align-items: start;
+}
+
+/* Right column heading */
+.badges-title {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: #222;
+}
+
+/* Vertical badge list */
+.badge-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.badge-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #efefef;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+.badge-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.badge-item span {
+  font-size: 13px;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+/* Keep your lc-panel/card visuals consistent */
+.lc-panel {
+  border: 1px solid #efefef;
+  border-radius: 14px;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+
+/* Responsive: stack on narrower screens */
+@media (max-width: 900px) {
+  .dsa-grid { grid-template-columns: 1fr; }
+  .dsa-right { order: 2; }
+  .dsa-left  { order: 1; }
+}
+/* badge-item{
+  cursor: pointer;
+} */
+.badge-item:hover{
+  cursor: pointer;
+  background-color: #764545d4
+}
