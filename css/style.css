@@ -1061,3 +1061,8 @@ list-style: none;
   cursor: pointer;
   background-color: #764545d4
 }
+
+.tag:hover{
+    cursor: pointer;
+  background-color: #764545d4
+}
