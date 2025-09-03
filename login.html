@@ -11,7 +11,7 @@
          <input id="email" type="email" placeholder="Email" required /> <input id="password" type="password" placeholder="Password" required /> <button type="submit">Login</button> 
          <div id="msg" class="error"></div>
       </form>
-      <script> const API = 'https://portfolio-backend-n8mx.onrender.com/auth/login'; // e.g., https://portfolio-backend.onrender.com 
+      <script> const API = 'https://portfolio-backend-n8mx.onrender.com'; // e.g., https://portfolio-backend.onrender.com
       document.getElementById('loginForm').addEventListener('submit', async (e) => { e.preventDefault(); const email = document.getElementById('email').value.trim(); const password = document.getElementById('password').value.trim(); const msg = document.getElementById('msg'); msg.textContent = ''; try { const res = await fetch(`${API}/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) }); if (!res.ok) throw new Error('Invalid credentials'); const { token } = await res.json(); localStorage.setItem('token', token); window.location.href = 'admin.html'; } catch (err) { msg.textContent = err.message || 'Login failed'; } }); </script> 
    </body>
 </html>
