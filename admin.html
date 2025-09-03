@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Admin — Projects</title>
+    <style> body { font-family: system-ui; margin: 2rem auto; max-width: 900px; } form, .toolbar { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); } form input, form textarea, form button { padding: 8px; font-size: 15px; } table { width: 100%; border-collapse: collapse; margin-top: 1rem; } th, td { border: 1px solid #ddd; padding: 8px; } th { background: #fafafa; } .full { grid-column: 1 / -1; } </style>
+</head>
+<body>
+<div class="toolbar">
+    <h1 class="full">Projects Admin</h1>
+    <button id="logout" class="full">Logout</button>
+</div>
+<h2>Add / Edit Project</h2>
+<form id="projectForm"> <input id="title" placeholder="Title" required /> <input id="badge" placeholder="Badge (e.g., Featured or CLI)" /> <textarea id="description" class="full" placeholder="Short description"></textarea> <input id="tags" class="full" placeholder="Tags (comma-separated, e.g., Java,Spring)" /> <input id="imageUrl" class="full" placeholder="Image URL" /> <input id="projectUrl" placeholder="Project URL" /> <input id="repoUrl" placeholder="Repo URL" /> <label class="full"><input type="checkbox" id="featured" /> Featured</label> <button type="submit" class="full">Save Project</button> </form>
+<h2>Existing Projects</h2>
+<table id="projectsTable">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Tags</th>
+        <th>Featured</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script> const API = 'https://<your-api-host>'; // replace with your backend URL const token = localStorage.getItem('token'); if (!token) window.location.href = 'login.html'; const authFetch = (url, options={}) => { return fetch(url, { ...options, headers: { 'Content-Type': 'application/json', ...(options.headers || {}), 'Authorization': `Bearer ${token}` } }); }; document.getElementById('logout').onclick = () => { localStorage.removeItem('token'); window.location.href = 'login.html'; }; const tbody = document.querySelector('#projectsTable tbody'); async function loadProjects() { const res = await fetch(`${API}/projects`); const data = await res.json(); tbody.innerHTML = ''; data.forEach(p => { const tr = document.createElement('tr'); tr.innerHTML = ` <td>${p.title || ''}</td> <td>${(p.tags || []).join(', ')}</td> <td>${p.featured ? 'Yes' : 'No'}</td> <td> <button data-id="${p.id}" class="edit">Edit</button> <button data-id="${p.id}" class="del">Delete</button> </td>`; tbody.appendChild(tr); }); // wire actions tbody.querySelectorAll('.del').forEach(btn => { btn.onclick = async () => { if (!confirm('Delete this project?')) return; await authFetch(`${API}/projects/${btn.dataset.id}`, { method: 'DELETE' }); loadProjects(); }; }); tbody.querySelectorAll('.edit').forEach(btn => { btn.onclick = async () => { const id = btn.dataset.id; const res = await fetch(`${API}/projects/${id}`); const p = await res.json(); fillForm(p); }; }); } function fillForm(p) { document.getElementById('title').value = p.title || ''; document.getElementById('badge').value = p.badge || ''; document.getElementById('description').value = p.description || ''; document.getElementById('tags').value = (p.tags || []).join(', '); document.getElementById('imageUrl').value = p.imageUrl || ''; document.getElementById('projectUrl').value = p.projectUrl || ''; document.getElementById('repoUrl').value = p.repoUrl || ''; document.getElementById('featured').checked = !!p.featured; document.getElementById('projectForm').dataset.id = p.id || ''; } document.getElementById('projectForm').addEventListener('submit', async (e) => { e.preventDefault(); const payload = { title: document.getElementById('title').value.trim(), badge: document.getElementById('badge').value.trim(), description: document.getElementById('description').value.trim(), tags: document.getElementById('tags').value.split(',').map(s => s.trim()).filter(Boolean), imageUrl: document.getElementById('imageUrl').value.trim(), projectUrl: document.getElementById('projectUrl').value.trim(), repoUrl: document.getElementById('repoUrl').value.trim(), featured: document.getElementById('featured').checked }; const id = e.currentTarget.dataset.id; const method = id ? 'PUT' : 'POST'; const url = id ? `${API}/projects/${id}` : `${API}/projects`; const res = await authFetch(url, { method, body: JSON.stringify(payload) }); if (!res.ok) { alert('Save failed'); return; } e.currentTarget.reset(); e.currentTarget.dataset.id = ''; loadProjects(); }); loadProjects(); </script>
+</body>
+</html>
