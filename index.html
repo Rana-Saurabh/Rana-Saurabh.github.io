@@ -1,522 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Saurabh Rana — Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saurabh Rana | Portfolio</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!-- Left profile panel -->
-  <aside class="leftprofile" aria-label="Profile">
-    <div class="profile-photo">
-      <img src="images/photo_2.png" alt="Portrait of Saurabh Rana" />
-    </div>
 
-    <div class="details">
-      <span class="username typewriter">Saurabh</span>
-      <span class="designation">Student</span>
-    </div>
+  <div class="app-container">
+    <!-- Sidebar Profile -->
+    <aside class="sidebar">
+      <div class="profile-header">
+        <div class="profile-img-container">
+          <img src="assets/photo_2.png" alt="Saurabh Rana" class="profile-img">
+          <div class="status-indicator"></div>
+        </div>
+        <h1 class="name">Saurabh Rana</h1>
+        <p class="role">Software Developer &<br>Security Enthusiast</p>
+      </div>
 
-    <nav class="socials" aria-label="Social links">
-      <ul>
-        <li><a href="https://www.linkedin.com/in/saurabhrana000" target="_blank" rel="noopener" title="LinkedIn">
-          <img id="linkdin" src="images/linkdin.png" alt="LinkedIn" />
-        </a></li>
-        <li><a href="https://github.com/Rana-Saurabh" target="_blank" rel="noopener" title="GitHub">
-          <img id="github" src="images/github.png" alt="GitHub" />
-        </a></li>
-        <li><a href="mailto:saurabhranaupes@gmail.com" title="Email">
-          <img id="Email" src="images/email.png" alt="Email" />
-        </a></li>
-      </ul>
-    </nav>
+      <nav class="main-nav">
+        <button class="nav-item active" data-target="home">
+          <i class="ri-home-4-line"></i> <span>Home</span>
+        </button>
+        <button class="nav-item" data-target="projects">
+          <i class="ri-code-s-slash-line"></i> <span>Projects</span>
+        </button>
+        <button class="nav-item" data-target="education">
+          <i class="ri-graduation-cap-line"></i> <span>Education</span>
+        </button>
+        <button class="nav-item" data-target="contact">
+          <i class="ri-mail-send-line"></i> <span>Contact</span>
+        </button>
+      </nav>
 
-    <div class="cv-download">
-      <a href="https://drive.google.com/file/d/1r-a9jyuhpsbffBy6uWiI4z8IAv8i7Qwi/view?usp=sharing" download>Download CV</a>
-    </div>
-  </aside>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/saurabhrana000" target="_blank" aria-label="LinkedIn"><i
+            class="ri-linkedin-fill"></i></a>
+        <a href="https://github.com/Rana-Saurabh" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="mailto:saurabhranaupes@gmail.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
+      </div>
 
-  <!-- Main content panel -->
-  <div class="main-body" role="region" aria-label="Content">
-    <!-- Section container: only one is visible at a time -->
-    <main id="main-body" tabindex="0" aria-live="polite">
-      <!-- HOME -->
-      <section id="section-home" class="page-section active" aria-label="Home">
-        <div class="my-infor">
-          <span id="intro">Hi My Name is . . .</span>
-          <span id="name-and-specility">Saurabh Rana</span>
-          <div id="details">
-            <p>I'm a passionate problem solver with a strong foundation in mathematics and a growing expertise in software development and application security. Having qualified the GATE Mathematics exam and earned an M.Sc. in Mathematics, I'm currently pursuing an MCA to bridge theoretical knowledge with practical application.</p>
-            <p>My professional journey includes hands-on experience as a Security Tester and Consultant, where I've conducted Man-in-the-Middle (MITM) attacks to identify vulnerabilities, rooted and decompiled Android applications for in-depth analysis, tested for SQL/runtime injections using tools like Frida, and secured single-login environments and unauthenticated APIs.</p>
-            <!-- <p>On the software side, I'm a Java enthusiast with projects like a Data Structure & Algorithm Visualizer, a CLI Library Management System, a Tree Traversal Toolkit, and a browser extension that visualizes and syncs Chrome/Firefox history with fuzzy search, tagging, and auth.</p> -->
-            <!-- <p>Recently earned the “50 Days Badge 2025” on LeetCode. I’m focused on integrating my mathematical background with real-world software solutions to build secure, efficient applications.</p> -->
+      <a href="https://drive.google.com/file/d/1r-a9jyuhpsbffBy6uWiI4z8IAv8i7Qwi/view?usp=sharing" target="_blank"
+        class="btn btn-primary download-cv">
+        <i class="ri-download-cloud-2-line"></i> Download CV
+      </a>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+
+      <!-- HOME SECTION -->
+      <section id="home" class="page-section active">
+        <div class="hero-content">
+          <span class="greeting">Hi, my name is</span>
+          <h2 class="big-name">Saurabh Rana.</h2>
+          <h3 class="subtitle">I build secure & scalable things.</h3>
+
+          <div class="bio">
+            <p>
+              I'm a passionate problem solver with a strong foundation in <strong>Mathematics</strong> and growing
+              expertise in <strong>Software Development</strong> and <strong>Application Security</strong>.
+            </p>
+            <p>
+              Currently pursuing an <strong>MCA</strong>, I bridge theoretical knowledge with practical application. My
+              journey includes hands-on experience as a Security Tester (MITM, Frida, SQL Injection) and building
+              efficient software solutions.
+            </p>
           </div>
-          <div class="mobile-cta-bar">
-  <a href="https://drive.google.com/file/d/1r-a9jyuhpsbffBy6uWiI4z8IAv8i7Qwi/view?usp=sharing" class="btn-download-cv">Download CV</a>
-  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
-    <img src="images/linkdin.png" alt="LinkedIn" />
-  </a>
-  <a href="https://github.com/yourprofile" target="_blank" rel="noopener" aria-label="GitHub">
-    <img src="images/github.png" alt="GitHub" />
-  </a>
-  <a href="mailto:youremail@example.com" aria-label="Email">
-    <img src="images/email.png" alt="Email" />
-  </a>
-</div>
 
+          <div class="stats-row">
+            <div class="stat-card">
+              <i class="ri-code-box-line"></i>
+              <div class="stat-info">
+                <span class="stat-value">MCA</span>
+                <span class="stat-label">Pursuing</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="ri-shield-check-line"></i>
+              <div class="stat-info">
+                <span class="stat-value">GATE</span>
+                <span class="stat-label">Qualified (Maths)</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="ri-trophy-line"></i>
+              <div class="stat-info">
+                <span class="stat-value">200+</span>
+                <span class="stat-label">LeetCode Days</span>
+              </div>
+            </div>
+          </div>
         </div>
-        
       </section>
- 
 
-<!-- proejct and dsa -->
- <section id="section-projects" class="page-section">
-         
-<h2>Projects</h2>
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="page-section">
+        <header class="section-header">
+          <h2>Featured Projects</h2>
+          <div class="tabs">
+            <button class="tab-btn active" data-category="software">Dev</button>
+            <button class="tab-btn" data-category="dsa">DSA</button>
+          </div>
+        </header>
 
-<!-- Sub-tabs -->
-<div class="proj-tabs" role="tablist" aria-label="Projects subsections">
-  <button class="proj-tab" aria-controls="proj-software" aria-selected="true">Software Projects</button>
-  <button class="proj-tab" aria-controls="proj-dsa" aria-selected="false">DSA</button>
-</div>
+        <div class="projects-grid" id="software-projects">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="card-header">
+              <div class="folder-icon"><i class="ri-folder-3-line"></i></div>
+              <div class="card-links">
+                <a href="#" target="_blank"><i class="ri-github-line"></i></a>
+                <a href="#" target="_blank"><i class="ri-external-link-line"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">DSA Visualizer</h3>
+            <p class="project-desc">Interactive GUI to visualize sorting, trees, and graph algorithms with step controls
+              and speed sliders. Built to help students understand complex algos.</p>
+            <ul class="tech-stack">
+              <li>Java</li>
+              <li>Swing</li>
+              <li>Algorithms</li>
+            </ul>
+          </article>
 
-<!-- Software Projects pane — put your existing cards here -->
-<div id="proj-software" class="proj-pane" role="tabpanel" tabindex="0">
-  <div class="projects" id="projects-grid">
-    <!-- Card 1 -->
-    <article class="project-card">
-      <div class="project-media">
-        <img src="images/projects/dsa-visualizer.jpg" alt="Data Structure & Algorithm Visualizer with animations">
-        <span class="project-badge">Featured</span>
-      </div>
-      <div class="project-body">
-        <h3 class="project-title">DSA Visualizer</h3>
-        <p class="project-desc">Interactive GUI to visualize sorting, trees, and graph algorithms with step controls and speed sliders.</p>
-      </div>
-      <div class="project-tech">
-        <span class="tech-chip"><img src="images/icons/java.png" alt="">Java</span>
-        <span class="tech-chip"><img src="images/icons/swing.png" alt="">Swing</span>
-        <span class="tech-chip"><img src="images/icons/algorithms.png" alt="">Algorithms</span>
-      </div>
-      <div class="project-footer">
-        <div class="project-links">
-          <a class="project-btn" href="https://github.com/Rana-Saurabh/..." target="_blank" rel="noopener">
-            <img src="images/github.png" alt="">Code
-          </a>
-          <a class="project-btn" href="https://rana-saurabh.github.io/..." target="_blank" rel="noopener">
-            <img src="images/link-icon.png" alt="">Live
-          </a>
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="card-header">
+              <div class="folder-icon"><i class="ri-terminal-box-line"></i></div>
+              <div class="card-links">
+                <a href="#" target="_blank"><i class="ri-github-line"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Library CLI System</h3>
+            <p class="project-desc">Lightweight CLI app to manage books, members, and transactions with persistence and
+              input validation. Efficient and robust.</p>
+            <ul class="tech-stack">
+              <li>Java</li>
+              <li>MySQL</li>
+              <li>JDBC</li>
+            </ul>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="card-header">
+              <div class="folder-icon"><i class="ri-history-line"></i></div>
+              <div class="card-links">
+                <a href="#" target="_blank"><i class="ri-github-line"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">History Sync Extension</h3>
+            <p class="project-desc">Browser extension that visualizes and syncs Chrome/Firefox history with fuzzy
+              search, tagging, and authentication.</p>
+            <ul class="tech-stack">
+              <li>JavaScript</li>
+              <li>Browser API</li>
+              <li>Node.js</li>
+            </ul>
+          </article>
         </div>
-        <div class="project-meta">Role: Developer • 2025</div>
-      </div>
-    </article>
 
-    <!-- Card 2 -->
-    <article class="project-card">
-      <div class="project-media">
-        <img src="images/projects/library-cli.jpg" alt="CLI-based Library Management System running in terminal">
-        <span class="project-badge">CLI</span>
-      </div>
-      <div class="project-body">
-        <h3 class="project-title">Library Management (CLI)</h3>
-        <p class="project-desc">Lightweight CLI app to manage books, members, and transactions with persistence and input validation.</p>
-      </div>
-      <div class="project-tech">
-        <span class="tech-chip"><img src="images/icons/java.png" alt="">Java</span>
-        <span class="tech-chip"><img src="images/icons/mysql.png" alt="">MySQL</span>
-      </div>
-      <div class="project-footer">
-        <div class="project-links">
-          <a class="project-btn" href="https://github.com/Rana-Saurabh/..." target="_blank" rel="noopener">
-            <img src="images/github.png" alt="">Code
-          </a>
+        <div class="projects-grid hidden" id="dsa-projects">
+          <div class="dsa-stats-container">
+            <div class="leetcode-card">
+              <div class="lc-header">
+                <i class="ri-code-s-slash-line"></i>
+                <span>LeetCode Stats</span>
+              </div>
+              <!-- Using a placeholder for the heatmap to ensure it looks good -->
+              <img src="https://leetcard.jacoblin.cool/rana-saurabh?theme=dark&font=Outfit&ext=heatmap"
+                alt="LeetCode Heatmap" class="lc-heatmap">
+              <div class="badges-row">
+                <div class="badge" title="200 Days Badge">
+                  <img src="https://assets.leetcode.com/static_assets/marketing/2024-50-badge.png" alt="Badge"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                  <i class="ri-medal-line fallback-icon"></i>
+                  <span>50 Days 2025</span>
+                </div>
+                <div class="badge" title="100 Days Badge">
+                  <img src="https://assets.leetcode.com/static_assets/marketing/2024-100-badge.png" alt="Badge"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                  <i class="ri-medal-2-line fallback-icon"></i>
+                  <span>100 Days 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="project-meta">Role: Developer • 2024</div>
-      </div>
-    </article>
+      </section>
 
-    <!-- Card 3 -->
-    <article class="project-card">
-      <div class="project-media">
-        <img src="images/projects/library-cli.jpg" alt="CLI-based Library Management System running in terminal">
-        <span class="project-badge">CLI</span>
-      </div>
-      <div class="project-body">
-        <h3 class="project-title">Library Management (CLI)</h3>
-        <p class="project-desc">Lightweight CLI app to manage books, members, and transactions with persistence and input validation.</p>
-      </div>
-      <div class="project-tech">
-        <span class="tech-chip"><img src="images/icons/java.png" alt="">Java</span>
-        <span class="tech-chip"><img src="images/icons/mysql.png" alt="">MySQL</span>
-      </div>
-      <div class="project-footer">
-        <div class="project-links">
-          <a class="project-btn" href="https://github.com/Rana-Saurabh/..." target="_blank" rel="noopener">
-            <img src="images/github.png" alt="">Code
-          </a>
+      <!-- EDUCATION SECTION -->
+      <section id="education" class="page-section">
+        <header class="section-header">
+          <h2>Education & Certs</h2>
+        </header>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="date">2024 - Present</span>
+              <h3 class="degree">Master of Computer Applications (MCA)</h3>
+              <p class="school">Institute/University Name</p>
+              <p class="details">Focus on Java, OOP, Spring Boot, DSA, and Application Security.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="date">2025</span>
+              <h3 class="degree">GATE Mathematics Qualified</h3>
+              <p class="school">National Level Exam</p>
+              <p class="details">Validated advanced mathematical proficiency useful for algorithms and analysis.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="date">Previous</span>
+              <h3 class="degree">M.Sc. in Mathematics</h3>
+              <p class="school">Institute/University Name</p>
+              <p class="details">Core: Real Analysis, Linear Algebra, Probability. Applied: Optimization.</p>
+            </div>
+          </div>
         </div>
-        <div class="project-meta">Role: Developer • 2024</div>
-      </div>
-    </article>
-  </div>
-</div>
+      </section>
 
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="page-section">
+        <div class="contact-container">
+          <h2 class="big-contact">Get In Touch</h2>
+          <p class="contact-text">
+            I'm currently looking for new opportunities in Software Development and Security. Whether you have a
+            question or just want to say hi, I'll try my best to get back to you!
+          </p>
 
-<div id="proj-dsa" class="proj-pane active" role="tabpanel" tabindex="0">
-  <div class="dsa-grid">
-    <!-- Left: LeetCode card and tags -->
-    <div class="dsa-left">
-      <div class="lc-panel">
-        <div class="lc-header">
-          <img src="images/leetcode.png" alt="" class="lc-logo">
-          <div>
-            <a class="lc-link" href="https://leetcode.com/rana-saurabh/" target="_blank" rel="noopener">
-              leetcode.com/rana-saurabh →
+          <a href="mailto:saurabhranaupes@gmail.com" class="btn btn-primary btn-large">
+            <i class="ri-mail-send-line"></i> Say Hello
+          </a>
+
+          <div class="contact-methods">
+            <a href="https://www.linkedin.com/in/saurabhrana000" target="_blank" class="method-card">
+              <i class="ri-linkedin-box-fill"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Rana-Saurabh" target="_blank" class="method-card">
+              <i class="ri-github-fill"></i>
+              <span>GitHub</span>
             </a>
           </div>
         </div>
+      </section>
 
-     <a href="https://leetcode.com/rana-saurabh/" target="_blank">
-           <div class="lc-card-imgwrap">
-          <img
-            src="https://leetcard.jacoblin.cool/rana-saurabh?theme=chartreuse&font=Poppins&ext=heatmap"
-            alt="LeetCode profile summary for rana-saurabh"
-            class="lc-img">
-        </div>
-
-     </a>
-        <div class="dsatags">
-          <span class="tag">Arrays</span>
-          <span class="tag">Trees</span>
-          <span class="tag">Graphs</span>
-          <span class="tag">DP</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: vertical badges list -->
-    <aside class="dsa-right">
-      <h4 class="badges-title">Badges</h4>
-      <ul class="badge-list" role="list">
-        <li class="badge-item">
-          <img src="images/leetcode50.png" alt="">
-          <span>50 Days Badge 2025</span>
-        </li>
-        <li class="badge-item">
-          <img src="images/leetcode100.png" alt="">
-          <span>100 Days Badge 2025</span>
-        </li>
-        <!-- Add more badges as needed -->
-      </ul>
-    </aside>
-  </div>
-</div>
-
-
-
- </section>
-<!-- education -->
-<section id="section-education" class="page-section" aria-label="Education">
-  <h2>Education</h2>
-
-  <!-- Degrees -->
-  <h3 class="edu-subtitle">Degrees</h3>
-  <ol class="edu-timeline" role="list">
-    <!-- MCA -->
-    <li class="edu-item">
-      <div class="edu-marker" aria-hidden="true">
-        <img src="images/mortarboard.png" alt="" />
-      </div>
-      <div class="edu-card">
-        <header class="edu-head">
-          <h4 class="edu-degree">Master of Computer Applications (MCA)</h4>
-          <span class="edu-meta">2024–Present</span>
-        </header>
-        <div class="edu-body">
-          <div class="edu-school">Institute/University Name</div>
-          <ul class="edu-highlights">
-            <li>Focus: Java, OOP, Spring Boot, DSA, Application Security.</li>
-            <li>Projects: DSA Visualizer, Library CLI, History Sync Extension.</li>
-          </ul>
-        </div>
-      </div>
-    </li>
-
-    <!-- M.Sc. -->
-    <li class="edu-item">
-      <div class="edu-marker" aria-hidden="true">
-        <img src="images/mortarboard.png" alt="" />
-      </div>
-      <div class="edu-card">
-        <header class="edu-head">
-          <h4 class="edu-degree">M.Sc. in Mathematics</h4>
-          <span class="edu-meta">Year • CGPA/Percentage</span>
-        </header>
-        <div class="edu-body">
-          <div class="edu-school">Institute/University Name</div>
-          <ul class="edu-highlights">
-            <li>Core: Real Analysis, Linear Algebra, Probability.</li>
-            <li>Applied: Optimization, algorithmic thinking.</li>
-          </ul>
-        </div>
-      </div>
-    </li>
-  </ol>
-
-  <!-- Certificates & Achievements -->
-  <h3 class="edu-subtitle">Certificates & Achievements</h3>
-  <ol class="cert-timeline" role="list">
-    <li class="cert-item">
-      <div class="cert-marker" aria-hidden="true">
-        <img src="images/badge.png" alt="" />
-      </div>
-      <div class="cert-card">
-        <header class="cert-head">
-          <h4 class="cert-title">GATE Mathematics — Qualified</h4>
-          <span class="cert-meta">2025</span>
-          <span><a style="font-size: small;" target="_blank" href="https://drive.google.com/file/d/1iNLlB5wbR3ibQkEv08qoKLZmOHI9kGG_/view?usp=drive_link">View</a></span>
-        </header>
-        <div class="cert-body">
-          <p>Validated advanced mathematical proficiency useful for algorithms and analysis.</p>
-        </div>
-      </div>
-    </li>
-
-    <li class="cert-item">
-      <div class="cert-marker" aria-hidden="true">
-        <img src="images/award.png" alt="" />
-      </div>
-      <div class="cert-card">
-        <header class="cert-head">
-          <h4 class="cert-title">LeetCode “50 Days Badge 2025”</h4>
-          <span class="cert-meta">2025</span>
-        </header>
-        <div class="cert-body">
-          <p>Sustained DSA practice across arrays, trees, graphs, and DP.</p>
-        </div>
-      </div>
-    </li>
-    <li class="cert-item">
-      <div class="cert-marker" aria-hidden="true">
-        <img src="images/award.png" alt="" />
-      </div>
-      <div class="cert-card">
-        <header class="cert-head">
-          <h4 class="cert-title">Fundamentals of Object Oriented Programming (IITR)</h4>
-          <span class="cert-meta">2025</span>
-          <span style="font-size: small;" ><a target="_blank" href="https://internalapp.nptel.ac.in/NOC/NOC25/SEM1/Ecertificates/106/noc25-cs34/Course/NPTEL25CS34S54400053304311387.pdf">view</a></span>
-        </header>
-        <div class="cert-body">
-          <p>Sustained DSA practice across arrays, trees, graphs, and DP.</p>
-        </div>
-      </div>
-    </li>
-<li class="cert-item">
-      <div class="cert-marker" aria-hidden="true">
-        <img src="images/award.png" alt="" />
-      </div>
-      <div class="cert-card">
-        <header class="cert-head">
-          <h4 class="cert-title">Database Management System (NPTEL IITK)</h4>
-          <span class="cert-meta">2025</span>
-          <span style="font-size: small;" ><a target="_blank" href="https://internalapp.nptel.ac.in/NOC/NOC25/SEM1/Ecertificates/106/noc25-cs18/Course/NPTEL25CS18S64900067101371230.pdf    ">view</a></span>
-        </header>
-        <div class="cert-body">
-          <p>Sustained DSA practice across arrays, trees, graphs, and DP.</p>
-        </div>
-      </div>
-    </li>
-
-    <!-- Add more items as needed -->
-  </ol>
-</section>
-
-
-
-      <!-- CONTACT -->
-<section id="section-contact" class="page-section" aria-label="Contact">
-  <h2>Contact</h2>
-
-  <!-- Primary CTA card -->
-  <div class="contact-card">
-    <div class="contact-intro">
-      <p>Open to software development and security testing opportunities. Prefer email or LinkedIn for fastest response.</p>
-    </div>
-
-    <div class="contact-actions">
-      <a class="btn-cta" href="mailto:saurabhranaupes@gmail.com">
-        <img src="images/email.png" alt="" aria-hidden="true"> Email Me
-      </a>
-      <button class="btn-ghost" id="copy-email" type="button" aria-label="Copy email to clipboard">
-        Copy Email
-      </button>
-    </div>
-  </div>
-
-  <!-- Quick links -->
-  <div class="contact-grid">
-    <a class="contact-item" href="https://www.linkedin.com/in/saurabhrana000" target="_blank" rel="noopener">
-      <img src="images/linkdin.png" alt="" aria-hidden="true">
-      <div class="c-title">LinkedIn</div>
-      <div class="c-sub">saurabhrana000</div>
-    </a>
-
-    <a class="contact-item" href="https://github.com/Rana-Saurabh" target="_blank" rel="noopener">
-      <img src="images/github.png" alt="" aria-hidden="true">
-      <div class="c-title">GitHub</div>
-      <div class="c-sub">Rana-Saurabh</div>
-    </a>
-
-    <a class="contact-item" href="assets/Saurabh-Rana-CV.pdf" download>
-      <img src="images/download.png" alt="" aria-hidden="true">
-      <div class="c-title">Download CV</div>
-      <div class="c-sub">PDF</div>
-    </a>
-  </div>
-
-  <!-- Optional: lightweight form (static mailto) -->
-  <form class="contact-form" action="mailto:saurabhranaupes@gmail.com" method="GET">
-    <div class="row">
-      <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
-      <input type="text" name="body" placeholder="Message (opens email app)" aria-label="Message">
-    </div>
-    <button class="btn-cta" type="submit">
-      <img src="images/email.png" alt="" aria-hidden="true"> Open Email App
-    </button>
-  </form>
-</section>
-
+      <footer class="mobile-footer">
+        <p>&copy; 2025 Saurabh Rana</p>
+      </footer>
     </main>
   </div>
 
-  <!-- Right vertical navbar -->
-  <!-- <nav class="navbar" aria-label="Section navigation">
-    <div>
-      <ul>
-        <li>
-          <button class="nav-btn" title="Home"
-                  data-tab="home"
-                  aria-controls="section-home"
-                  aria-selected="true">
-            <img src="images/home.png" alt="Home" />
-          </button>
-        </li>
-        <li>
-          <button class="nav-btn" title="Projects"
-                  data-tab="projects"
-                  aria-controls="section-projects"
-                  aria-selected="false">
-            <img src="images/github.png" alt="Projects" />
-          </button>
-        </li>
-        <li>
-          <button class="nav-btn" title="Education"
-                  data-tab="education"
-                  aria-controls="section-education"
-                  aria-selected="false">
-            <img src="images/mortarboard.png" alt="Education" />
-          </button>
-        </li>
-        <li>
-          <button class="nav-btn" title="Contact"
-                  data-tab="contact"
-                  aria-controls="section-contact"
-                  aria-selected="false">
-            <img src="images/email.png" alt="Contact" />
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
-<nav class="navbar" aria-label="Section navigation">
-  <ul>
-    <li><button class="nav-btn" data-tab="home" aria-controls="section-home" aria-selected="true" title="Home">🏠</button></li>
-    <li><button class="nav-btn" data-tab="projects" aria-controls="section-projects" aria-selected="false" title="Projects">📂</button></li>
-    <li><button class="nav-btn" data-tab="education" aria-controls="section-education" aria-selected="false" title="Education">🎓</button></li>
-    <li><button class="nav-btn" data-tab="contact" aria-controls="section-contact" aria-selected="false" title="Contact">✉️</button></li>
-  </ul>
-</nav>
-
-  <!-- Minimal controller; we’ll enhance if needed -->
   <script>
-    (function () {
-      const buttons = document.querySelectorAll('.nav-btn[aria-controls]');
-      const sections = document.querySelectorAll('.page-section');
+    // Navigation Logic
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.page-section');
 
-      function show(id) {
-        sections.forEach(s => s.classList.toggle('active', s.id === id));
-        buttons.forEach(b =>
-          b.setAttribute('aria-selected', b.getAttribute('aria-controls') === id)
-        );
-        const active = document.getElementById(id);
-        if (active) active.focus({ preventScroll: true });
-        // Optional: update hash for sharable links
-        const short = id.replace('section-', '');
-        history.replaceState(null, '', '#' + short);
-      }
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const targetId = item.getAttribute('data-target');
 
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => show(btn.getAttribute('aria-controls')));
-        btn.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            show(btn.getAttribute('aria-controls'));
+        // Update Nav
+        navItems.forEach(nav => nav.classList.remove('active'));
+        item.classList.add('active');
+
+        // Update Sections
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === targetId) {
+            section.classList.add('active');
+            // Reset scroll
+            section.scrollTop = 0;
           }
         });
       });
+    });
 
-      // If URL has hash (e.g., #projects), open that section on load
-      window.addEventListener('DOMContentLoaded', () => {
-        if (location.hash) {
-          const id = 'section-' + location.hash.slice(1);
-          if (document.getElementById(id)) show(id);
+    // Project Tabs Logic
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const softwareGrid = document.getElementById('software-projects');
+    const dsaGrid = document.getElementById('dsa-projects');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (btn.dataset.category === 'software') {
+          softwareGrid.classList.remove('hidden');
+          dsaGrid.classList.add('hidden');
+        } else {
+          softwareGrid.classList.add('hidden');
+          dsaGrid.classList.remove('hidden');
         }
       });
-    })();
-    
-
-(function(){
-  const tabs = document.querySelectorAll('.proj-tab[aria-controls]');
-  const panes = document.querySelectorAll('.proj-pane');
-  function showPane(id){
-    panes.forEach(p => p.classList.toggle('active', p.id === id));
-    tabs.forEach(t => t.setAttribute('aria-selected', t.getAttribute('aria-controls') === id));
-    const active = document.getElementById(id);
-    if (active) active.focus({ preventScroll: true });
-  }
-  tabs.forEach(t => t.addEventListener('click', () => showPane(t.getAttribute('aria-controls'))));
-  // Default to Software
-  showPane('proj-software');
-})();
-
-
-  </script>
-  <script>
-  (function(){
-    const btn = document.getElementById('copy-email');
-    if (!btn) return;
-    const email = 'saurabhranaupes@gmail.com';
-    btn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(email);
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy Email', 1600);
-      } catch(e) {
-        btn.textContent = email; // fallback: show email
-        setTimeout(() => btn.textContent = 'Copy Email', 3000);
-      }
     });
-  })();
-</script>
-
+  </script>
 </body>
+
 </html>
